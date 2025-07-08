@@ -1,0 +1,28 @@
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: width .2s ease-in-out;
+}
+
+.collapsed{
+    width: 60px;
+}
+
+.sideMenubar li{
+    padding: 5px;
+}
+
+.sideMenubar li a.nav-link{
+    border-radius: 8px;
+}
+
+.sideMenubar li a.nav-link.active{
+    background-color:lightgray;
+    
+}
+
+.sideMenubar li a.nav-link:hover{
+    background-color:rgba(211, 211, 211, 0.555);
+}

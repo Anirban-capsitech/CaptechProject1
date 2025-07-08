@@ -1,0 +1,105 @@
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\appsettings.Development.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\appsettings.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.staticwebassets.endpoints.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.exe
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.deps.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.runtimeconfig.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.pdb
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.csproj.AssemblyReference.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.AssemblyInfoInputs.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.AssemblyInfo.cs
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.csproj.CoreCompileInputs.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.MvcApplicationPartsAssemblyInfo.cs
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.MvcApplicationPartsAssemblyInfo.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\scopedcss\bundle\UserApplication.styles.css
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.development.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserAppl.FA5D1129.Up2Date
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\refint\UserApplication.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.pdb
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.genruntimeconfig.cache
+C:\Test\Dotnet web api\UserApplication\UserApplication\obj\Debug\net8.0\ref\UserApplication.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\DnsClient.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\SharpCompress.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Snappier.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\ZstdSharp.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Test\Dotnet web api\UserApplication\UserApplication\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\appsettings.Development.json
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\appsettings.json
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.staticwebassets.endpoints.json
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.exe
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.deps.json
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.runtimeconfig.json
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\UserApplication.pdb
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\DnsClient.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\SharpCompress.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Snappier.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\ZstdSharp.dll
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.csproj.AssemblyReference.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.AssemblyInfoInputs.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.AssemblyInfo.cs
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.csproj.CoreCompileInputs.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.MvcApplicationPartsAssemblyInfo.cs
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.MvcApplicationPartsAssemblyInfo.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\scopedcss\bundle\UserApplication.styles.css
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.development.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserAppl.FA5D1129.Up2Date
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.dll
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\refint\UserApplication.dll
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.pdb
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.genruntimeconfig.cache
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\ref\UserApplication.dll
+C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\BCrypt.Net-Next.dll
