@@ -103,3 +103,4 @@ C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication
 C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.genruntimeconfig.cache
 C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\ref\UserApplication.dll
 C:\Project\Try1\UserApplication\UserApplication\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Project\Try1\UserApplication\UserApplication\obj\Debug\net8.0\UserApplication.sourcelink.json

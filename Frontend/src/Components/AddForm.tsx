@@ -3,7 +3,6 @@ import "../Styles/view.css";
 import { useFormik } from "formik";
 import type { User, ItemDetail } from "../Interface/UserData";
 import { UserSchema } from "../Schemas/UserSchema.tsx";
-import axios from "axios";
 import axiosInstance from "../Utils/Axios.ts";
 
 interface props {
@@ -40,7 +39,7 @@ useEffect(() => {
     const price = Number(item.price) || 0;
     const gst = Number(item.gst) || 0;
 
-    const amount = parseFloat((quantity * price * (1 + gst / 100)).toFixed(3));
+    const amount = parseFloat((quantity * price * (1 + gst / 100)).toFixed(2));
     return { ...item, amount };
   });
 

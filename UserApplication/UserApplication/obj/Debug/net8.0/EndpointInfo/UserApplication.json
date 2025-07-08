@@ -92,6 +92,18 @@
         }
       }
     },
+    "/UserData/bill_list": {
+      "get": {
+        "tags": [
+          "UserData"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/UserData/list": {
       "get": {
         "tags": [

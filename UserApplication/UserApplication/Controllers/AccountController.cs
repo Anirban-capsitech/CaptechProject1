@@ -15,6 +15,7 @@ namespace UserApplication.Controllers
     {
         private IConfiguration _configuration = configuration;
 
+        //Takes user input and fetch data from backend
         [HttpPost("signup")]
         public async Task<IActionResult> SignUp(Account account)
         {
@@ -103,7 +104,6 @@ namespace UserApplication.Controllers
                 {
                     Console.WriteLine(ex.Message);
                 }
-
                 return refreshToken;
             }
         }

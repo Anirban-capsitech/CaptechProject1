@@ -9,7 +9,7 @@ const Navbar = () => {
   }
   
   return (
-    <nav className="navbar top-0 bg-primary py-4 z-0" style={{position:'sticky'}}>
+    <nav className="navbar top-0 bg-primary py-2 z-0" style={{position:'sticky'}}>
       <div className="w-100 d-flex justify-content-end">
         <div className="ProfileLogo mx-2">
             {/* <img className="" src=".src/assets/logo.png" /> */}

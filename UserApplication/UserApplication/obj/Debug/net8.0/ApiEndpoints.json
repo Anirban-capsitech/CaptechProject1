@@ -75,6 +75,16 @@
   },
   {
     "ContainingType": "UserApplication.Controllers.UserDataController",
+    "Method": "GetBillList",
+    "RelativePath": "UserData/bill_list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApplication.Controllers.UserDataController",
     "Method": "DeleteData",
     "RelativePath": "UserData/delete/{id}",
     "HttpMethod": "POST",

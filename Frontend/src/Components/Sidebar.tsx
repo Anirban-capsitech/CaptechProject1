@@ -1,9 +1,10 @@
 import { useState } from "react";
 import '../Styles/sidebar.css'
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
-
+  const Navigate = useNavigate();
   return (
     <>
       <div
@@ -16,29 +17,28 @@ const Sidebar = () => {
           >
             <i className="bi bi-chevron-left"></i>
           </button>
-
-          <img className="w-auto p-2" src={`./src/assets/${collapsed ? "logo_sm.png" : "logo.png"}`}
+          <img className="w-auto p-2" src={`/assets/${collapsed ? "logo_sm.png" : "logo.png"}`}
             style={{height: "100%"}} alt="Company logo"
           />
         </div>
 
         <ul className="sideMenubar nav flex-column mt-3">
           <li className="nav-item">
-            <a href="#" className="nav-link active">
+            <a onClick={()=> Navigate("/dashboard")} className="nav-link active">
               <i className="bi bi-house-door-fill text-primary fs-5"></i>
               {!collapsed && <span className="ms-2 text-dark">Dashboard</span>}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a onClick={()=> Navigate("/dashboard/attendee")} className="nav-link">
+              <i className="bi bi-people-fill text-primary fs-5"></i>
+              {!collapsed && <span className="ms-2 text-dark">Attendee</span>}
             </a>
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link">
               <i className="bi bi-calendar2-week-fill text-primary fs-5"></i>
               {!collapsed && <span className="ms-2 text-dark">Leaves</span>}
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <i className="bi bi-people-fill text-primary fs-5"></i>
-              {!collapsed && <span className="ms-2 text-dark">Attendence Request</span>}
             </a>
           </li>
 

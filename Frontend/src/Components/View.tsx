@@ -209,15 +209,11 @@ const View = () => {
                 return (
                   <tr key={item.id}>
                     <th scope="row">{item.slNo}</th>
-                    {/* <td>{String(item.billNo).padStart(4, "0")}</td> */}
                     <td>{item.billNo}</td>
                     <td>{item.name}</td>
                     <td>{item.phoneNo}</td>
                     <td>{item.email}</td>
                     <td className="d-flex gap-3">
-                      <a href="#" className="text-black-50">
-                        <i className="bi bi bi-eye-fill"></i>
-                      </a>
                       <button
                         type="button"
                         className="text-black-50 rounded-circle"

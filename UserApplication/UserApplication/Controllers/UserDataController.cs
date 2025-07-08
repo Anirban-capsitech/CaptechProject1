@@ -11,6 +11,25 @@ namespace UserApplication.Controllers
     public class UserDataController(AppDbContext context) : Controller
     {
 
+        [HttpGet("bill_list")]
+        [Authorize]
+        public async Task<ActionResult> GetBillList()
+        {
+            var filter = Builders<User>.Filter.Where(u => u._sts != 0);
+            var projection = Builders<User>.Projection.Expression(u => new
+            {
+                Id = u.Id!,
+                BillNo = u.BillNo,
+            });
+
+            var allBills = await context.User
+                .Find(filter)
+                .Project(projection)
+                .ToListAsync();
+
+            return Ok(allBills);
+        }
+
         //Return all the available data from the database which are not deleted(_sts != 0)
         [HttpGet("list")]
         [Authorize]
