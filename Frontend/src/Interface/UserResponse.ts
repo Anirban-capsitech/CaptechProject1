@@ -4,5 +4,6 @@ export interface UserResponse {
     email : string,
     phoneNo : number,
     billNo : string,
-    slNo : number
+    slNo : number,
+    attendeeName ?:string
 }

@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "UserApplication.Controllers.AttendeeController",
+    "Method": "AddAttendee",
+    "RelativePath": "addattendee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AttendeeData",
+        "Type": "UserApplication.Entities.Attendee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApplication.Controllers.AttendeeController",
+    "Method": "DeleteAllAttendee",
+    "RelativePath": "deleteattendeelist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApplication.Controllers.AttendeeController",
+    "Method": "GetAllAttendee",
+    "RelativePath": "getattendeelist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UserApplication.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "login",

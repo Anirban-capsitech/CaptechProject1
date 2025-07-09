@@ -1,5 +1,6 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 namespace UserApplication.Entities
 {
@@ -49,6 +50,11 @@ namespace UserApplication.Entities
         public Payment Payment { get; set; }
         public string? BillNo { get; set; }
         public int? _sts { get; set; }
+    }
+
+    public class UserlookupModel: User
+    {
+        public List<Attendee> AttendeeDetails { get; set; } = new();
     }
 }
 

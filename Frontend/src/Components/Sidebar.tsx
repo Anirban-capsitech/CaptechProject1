@@ -1,10 +1,10 @@
 import { useState } from "react";
 import '../Styles/sidebar.css'
-import { useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const Navigate = useNavigate();
+
   return (
     <>
       <div
@@ -24,16 +24,16 @@ const Sidebar = () => {
 
         <ul className="sideMenubar nav flex-column mt-3">
           <li className="nav-item">
-            <a onClick={()=> Navigate("/dashboard")} className="nav-link active">
+            <NavLink to="/dashboard" end className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} >
               <i className="bi bi-house-door-fill text-primary fs-5"></i>
               {!collapsed && <span className="ms-2 text-dark">Dashboard</span>}
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a onClick={()=> Navigate("/dashboard/attendee")} className="nav-link">
+            <NavLink to="/dashboard/attendee" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} >
               <i className="bi bi-people-fill text-primary fs-5"></i>
               {!collapsed && <span className="ms-2 text-dark">Attendee</span>}
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link">

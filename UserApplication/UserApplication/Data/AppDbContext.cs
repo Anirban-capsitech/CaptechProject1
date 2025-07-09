@@ -21,6 +21,8 @@ namespace UserApplication.Data
 
         public IMongoCollection<Account> Account => _database.GetCollection<Account>("AccountList");
 
+        public IMongoCollection<Attendee> Attendee => _database.GetCollection<Attendee>("AttendeeList");
+
 
     }
 }

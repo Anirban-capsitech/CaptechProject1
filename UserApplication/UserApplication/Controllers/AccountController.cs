@@ -13,6 +13,7 @@ namespace UserApplication.Controllers
     [ApiController]
     public class AccountController(AppDbContext context, IConfiguration configuration) : Controller
     {
+
         private IConfiguration _configuration = configuration;
 
         //Takes user input and fetch data from backend

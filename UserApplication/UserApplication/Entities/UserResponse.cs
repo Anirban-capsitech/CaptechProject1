@@ -8,5 +8,6 @@
         public long PhoneNo { get; set; }
         public string? BillNo { get; set; }
         public int? slNo { get; set; }
+        public string? AttendeeName { get; set; }
     }
 }

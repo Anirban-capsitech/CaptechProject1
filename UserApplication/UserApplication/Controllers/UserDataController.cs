@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using UserApplication.Data;
 using UserApplication.Entities;
 
@@ -35,6 +37,8 @@ namespace UserApplication.Controllers
         [Authorize]
         public async Task<ActionResult> GetList(string? search)
         {
+
+
             var filter = Builders<User>.Filter.Where(u => u._sts != 0);
 
             if (!string.IsNullOrWhiteSpace(search))
@@ -44,26 +48,39 @@ namespace UserApplication.Controllers
             }
 
             int count = 1;
-            var projection = Builders<User>.Projection.Expression(u => new UserResponse
+           
+            try
             {
-                Id = u.Id!,
-                Name = u.PersonalDetails.Name,
-                Email = u.PersonalDetails.Email,
-                PhoneNo = u.PersonalDetails.PhNo,
-                BillNo = u.BillNo,
-            });
+                var qry = context.User.Aggregate().Match(filter)
+                    .Lookup<User, Attendee, UserlookupModel>(
+                        context.Attendee,
+                        u => u.BillNo,
+                        a => a.BillNo,
+                        u => u.AttendeeDetails)
+                    .Project(u => new UserResponse
+                    {
+                        Id = u.Id!,
+                        Name = u.PersonalDetails.Name,
+                        Email = u.PersonalDetails.Email,
+                        PhoneNo = u.PersonalDetails.PhNo,
+                        BillNo = u.BillNo,
+                        AttendeeName = u.AttendeeDetails.FirstOrDefault() != null ? u.AttendeeDetails.First().AttendeeName : "",
+                    });
 
-            var userResponses = await context.User
-                .Find(filter)
-                .Project(projection)
-                .ToListAsync();
+                var userResponses = qry.ToList();
 
-            foreach (var data in userResponses)
-            {
-                data.slNo = count++;
+                foreach (var data in userResponses)
+                {
+                    data.slNo = count++;
+                }
+
+                return Ok(userResponses);
             }
-                
-            return Ok(userResponses);
+            catch (Exception ex)
+            {
+                return BadRequest("An error occurred while fetching the data: " + ex.Message);
+            }
+           //return Ok();
         }
 
         //Return a single user data by ID

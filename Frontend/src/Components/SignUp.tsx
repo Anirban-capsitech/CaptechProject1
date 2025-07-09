@@ -44,7 +44,7 @@ const SignUp = () => {
             setOpenModal(true);
             resetForm();
           })
-        .catch((err) => console.error(err));
+        .catch((err) => setResponseError(err.response.data));
     },
   });
 

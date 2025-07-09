@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import AddForm from "./AddForm";
-import axios from "axios";
 import type { UserResponse } from "../Interface/UserResponse";
 import "../index.css";
 import Modal from "./Modal";
@@ -59,11 +58,7 @@ const View = () => {
       if(searchText.length > 0){
         addToSearch = `?search=${searchText}`
       }
-      const res = await axiosInstance.get(getAllURL + addToSearch, {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("AToken")}`
-        }
-      });
+      const res = await axiosInstance.get(getAllURL + addToSearch,);
       console.log(res.data);
       setuserData(res.data);
     } catch (error) {
@@ -198,6 +193,7 @@ const View = () => {
               <th scope="col text-center">S NO.</th>
               <th scope="col">Bill Id</th>
               <th scope="col text-center">Name</th>
+              <th scope="col">Attendee</th>
               <th scope="col">Phone No.</th>
               <th scope="col">Email</th>
               <th scope="col">Actions</th>
@@ -211,6 +207,7 @@ const View = () => {
                     <th scope="row">{item.slNo}</th>
                     <td>{item.billNo}</td>
                     <td>{item.name}</td>
+                    <td>{item.attendeeName}</td>
                     <td>{item.phoneNo}</td>
                     <td>{item.email}</td>
                     <td className="d-flex gap-3">
