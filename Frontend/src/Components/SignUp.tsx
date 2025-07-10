@@ -70,7 +70,7 @@ const SignUp = () => {
         >
           <img
             className="img-fluid"
-            src="../src/assets/logo.png"
+            src="/assets/logo.png"
             style={{ height: "100%" }}
           />
         </div>
