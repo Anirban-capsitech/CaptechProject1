@@ -41,17 +41,21 @@ namespace UserApplication.Controllers
             return Ok(allBills);
         }
 
-
         //Return all the available data from the database which are not deleted(_sts != 0)
         [HttpGet("list")]
         [Authorize]
-        public async Task<ActionResult> GetList(string? search, int? pageSize, int? page , string sortDir = "asc" , bool sort = false)
+        public async Task<ActionResult> GetList(string? search, int? pageSize, int? page , string sortDir = "asc" , bool sort = false , bool? active = true)
         {
             int count = 1;
 
             try
             {
                 var filter = Builders<User>.Filter.Where(u => u._sts != 0);
+
+                if (active != null && active == false)
+                {
+                   filter = Builders<User>.Filter.Where(u => u._sts == 0);
+                }
 
                 if (!string.IsNullOrWhiteSpace(search))
                 {

@@ -234,6 +234,14 @@
               "type": "boolean",
               "default": false
             }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
           }
         ],
         "responses": {
