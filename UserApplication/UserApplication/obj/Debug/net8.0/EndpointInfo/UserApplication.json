@@ -166,6 +166,18 @@
         }
       }
     },
+    "/Using_Aggregation": {
+      "post": {
+        "tags": [
+          "Attendee"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/UserData/bill_list": {
       "get": {
         "tags": [
@@ -189,6 +201,38 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "asc"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           }
         ],
@@ -262,6 +306,27 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/UserData/download-invoice": {
+      "get": {
+        "tags": [
+          "UserData"
+        ],
+        "parameters": [
+          {
+            "name": "billNo",
+            "in": "query",
             "schema": {
               "type": "string"
             }

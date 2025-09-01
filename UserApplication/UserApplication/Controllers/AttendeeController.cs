@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
 using UserApplication.Data;
 using UserApplication.Entities;
+using Capsitech;
 
 namespace UserApplication.Controllers
 {
@@ -95,7 +97,51 @@ namespace UserApplication.Controllers
                 return BadRequest("No matching data found for deletion.");
             return Ok("Data Deleted");
         }
+
+        //public async Task<IActionResult> AggregationPractice()
+        //{
+        //    var pipeline = new[]
+        //    {
+        //        new BsonDocument("$match", new BsonDocument("Payment.Status", "Due"))
+        //    };
+        //    var result = await context.User.Aggregate<BsonDocument>(pipeline).ToListAsync();
+        //    //var jsonCompatible = result.Select(doc => BsonTypeMapper.MapToDotNetValue(doc)).ToList();
+
+        //    return Ok(result);
+        //}
+
+        [HttpPost("Using_Aggregation")]
+        public async Task<IActionResult> AggregationPractice()
+        {
+            var result = await context.User.Aggregate()
+                .Match(x => x._sts != 0)
+                .Lookup<User, Attendee, UserlookupModel>(
+                        context.Attendee,
+                        u => u.BillNo,
+                        a => a.BillNo,
+                        u => u.AttendeeDetails
+                )
+                .Project(u => new
+                {
+                    Id = u.Id,
+                    Name = u.PersonalDetails.Name,
+                    PhNo = u.PersonalDetails.PhNo,
+                    AttendeeName = u.AttendeeDetails.Count > 0 ? u.AttendeeDetails.First().AttendeeName : null,
+                    Status = u.Payment.Status,
+                })
+                .Match(x => x.AttendeeName != null)
+                .Group(
+                    key => key.Status,
+                    g => new
+                    {
+                        Id = g.Key,
+                        TotalEntries = g.Count(),
+                    }
+                )
+                .Count()
+                .FirstOrDefaultAsync();
+                
+            return Ok(result);
+        }
     }
-
-
 }

@@ -10,4 +10,11 @@
         public int? slNo { get; set; }
         public string? AttendeeName { get; set; }
     }
+
+    public class UserDataList
+    {
+        public string id { get; set; } 
+        public decimal totalEntries { get; set; }
+        public decimal totalAmount { get; set; }
+    }
 }

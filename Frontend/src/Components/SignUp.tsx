@@ -56,18 +56,9 @@ const SignUp = () => {
   }
 
   return (
-    <div
-      className="loginPage m-0 d-flex align-items-center justify-content-center"
-      style={{ height: "100vh" }}
-    >
-      <div
-        className="card p-3 m-3 rounded-3"
-        style={{ width: "100%", maxWidth: "500px", minWidth: "300px" }}
-      >
-        <div
-          className="companyHeader text-center"
-          style={{ height: "50px", overflow: "hidden" }}
-        >
+    <div className="loginPage m-0 d-flex align-items-center justify-content-center"style={{ height: "100vh" }}>
+      <div className="card p-3 m-3 rounded-3" style={{ width: "100%", maxWidth: "500px", minWidth: "300px" }}>
+        <div className="companyHeader text-center" style={{ height: "50px", overflow: "hidden" }}>
           <img
             className="img-fluid"
             src="/assets/logo.png"

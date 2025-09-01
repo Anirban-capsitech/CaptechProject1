@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Capsitech;
+using Capsitech.PDF;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
+using System.Text;
 using UserApplication.Data;
 using UserApplication.Entities;
 
@@ -10,8 +13,14 @@ namespace UserApplication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserDataController(AppDbContext context) : Controller
+    public class UserDataController : ControllerBase
     {
+        public readonly AppDbContext context;
+
+        public UserDataController(AppDbContext _context)
+        {
+            this.context = _context;
+        }
 
         [HttpGet("bill_list")]
         [Authorize]
@@ -32,31 +41,37 @@ namespace UserApplication.Controllers
             return Ok(allBills);
         }
 
+
         //Return all the available data from the database which are not deleted(_sts != 0)
         [HttpGet("list")]
         [Authorize]
-        public async Task<ActionResult> GetList(string? search)
+        public async Task<ActionResult> GetList(string? search, int? pageSize, int? page , string sortDir = "asc" , bool sort = false)
         {
-
-
-            var filter = Builders<User>.Filter.Where(u => u._sts != 0);
-
-            if (!string.IsNullOrWhiteSpace(search))
-            {
-                var searchFilter = Builders<User>.Filter.Where(u => u.PersonalDetails.Name.Contains(search) || (u.BillNo!).Contains(search) || (u.PersonalDetails.PhNo).ToString().StartsWith(search));
-                filter = Builders<User>.Filter.And(filter, searchFilter);
-            }
-
             int count = 1;
-           
+
             try
             {
-                var qry = context.User.Aggregate().Match(filter)
+                var filter = Builders<User>.Filter.Where(u => u._sts != 0);
+
+                if (!string.IsNullOrWhiteSpace(search))
+                {
+                    var searchFilter = Builders<User>.Filter.Where(u =>
+                        u.PersonalDetails.Name.Contains(search) ||
+                        (u.BillNo!).Contains(search) ||
+                        u.PersonalDetails.PhNo.ToString().StartsWith(search)
+                    );
+                    filter = Builders<User>.Filter.And(filter, searchFilter);
+                }
+
+                // base query
+                var qry = context.User.Aggregate()
+                    .Match(filter)
                     .Lookup<User, Attendee, UserlookupModel>(
                         context.Attendee,
                         u => u.BillNo,
                         a => a.BillNo,
-                        u => u.AttendeeDetails)
+                        u => u.AttendeeDetails
+                    )
                     .Project(u => new UserResponse
                     {
                         Id = u.Id!,
@@ -64,10 +79,29 @@ namespace UserApplication.Controllers
                         Email = u.PersonalDetails.Email,
                         PhoneNo = u.PersonalDetails.PhNo,
                         BillNo = u.BillNo,
-                        AttendeeName = u.AttendeeDetails.FirstOrDefault() != null ? u.AttendeeDetails.First().AttendeeName : "",
+                        AttendeeName = u.AttendeeDetails.FirstOrDefault() != null
+                            ? u.AttendeeDetails.First().AttendeeName
+                            : ""
                     });
 
-                var userResponses = qry.ToList();
+                // apply paging only if values are provided
+                if (page.HasValue && page.Value > 0 && pageSize.HasValue )
+                {
+                    int skip = (page.Value - 1) * pageSize.Value;
+                    qry = qry.Skip(skip).Limit(pageSize.Value);
+                }
+
+                if (sort)
+                {
+                    if (sortDir.ToLower() == "asc")
+                        qry = qry.SortBy(u => u.Name);
+                    else if (sortDir.ToLower() == "desc")
+                        qry = qry.SortByDescending(u => u.Name);
+                    else
+                        qry = qry.SortByDescending(u => u.Name);
+                }
+
+                var userResponses = await qry.ToListAsync();
 
                 foreach (var data in userResponses)
                 {
@@ -80,7 +114,6 @@ namespace UserApplication.Controllers
             {
                 return BadRequest("An error occurred while fetching the data: " + ex.Message);
             }
-           //return Ok();
         }
 
         //Return a single user data by ID
@@ -166,6 +199,58 @@ namespace UserApplication.Controllers
             if (result.MatchedCount == 0)
                 return BadRequest("No matching data found for deletion.");
             return Ok("Data Deleted");
+        }
+
+
+        //[HttpGet("download-pdf")]
+        [HttpGet("download-invoice/")]
+        public async Task<IActionResult> DownloadInvoice([FromQuery]string billNo)
+        {
+            // Fetch user data from MongoDB (simplified)
+            var filter = Builders<User>.Filter.Where( u => u.BillNo == billNo);
+            var user = await context.User.Find(filter).FirstOrDefaultAsync();
+
+            if (user == null)
+                return NotFound("User not found.");
+
+            var html = new StringBuilder();
+            html.Append("<html><head><style>");
+            html.Append("table { width: 100%; border-collapse: collapse; }");
+            html.Append("th, td { border: 1px solid #ccc; padding: 8px; }");
+            html.Append("h2 { text-align: center; }");
+            html.Append("</style></head><body>");
+
+            html.Append($"<h2>Invoice - {user.BillNo}</h2>");
+            html.Append("<h4>Customer Details</h4>");
+            html.Append($"<p><b>Name:</b> {user.PersonalDetails.Name}<br>");
+            html.Append($"<b>Email:</b> {user.PersonalDetails.Email}<br>");
+            html.Append($"<b>Phone:</b> {user.PersonalDetails.PhNo}</p>");
+
+            html.Append("<h4>Address</h4>");
+            html.Append($"<p>{user.Address.Street}, {user.Address.City}, {user.Address.State}, {user.Address.Country}</p>");
+
+            html.Append("<h4>Items</h4>");
+            html.Append("<table><thead><tr><th>Description</th><th>Qty</th><th>Price</th><th>GST</th><th>Amount</th></tr></thead><tbody>");
+            foreach (var item in user.ItemDetails)
+            {
+                html.Append($"<tr><td>{item.ItemDesc}</td><td>{item.Quantity}</td><td>{item.Price}</td><td>{item.Gst}%</td><td>{item.Amount}</td></tr>");
+            }
+            html.Append("</tbody></table>");
+
+            html.Append("<h4>Payment</h4>");
+            html.Append($"<p><b>Paid:</b> {user.Payment.PaidAmount}<br>");
+            html.Append($"<b>Status:</b><span style=\"background-color: lightblue; padding: 3px 5px; boder-radious : 5px \"> {user.Payment.Status}</span>\r\n<br>");
+            html.Append($"<b>Description:</b> {user.Payment.Desc}</p>");
+
+            html.Append("</body></html>");
+
+            // Convert HTML to PDF
+            var pdfBytes = await Capsitech.PDF.PdfUtility.ConvertPdfWithoutHF(
+                $"https://{Request.Host}/",
+                html.ToString(),
+                "Invoice");
+
+            return File(pdfBytes, "application/pdf", $"Invoice_{user.BillNo}.pdf");
         }
     }
 }

@@ -5,10 +5,12 @@ import View from "./View";
 import { Route, Routes } from "react-router-dom";
 import Attendee from "./Attendee";
 import ProtectedRoute from "./ProtectedRoute";
+import { ToastContainer } from "react-toastify";
 
 const Dashboard = () => {
   return (
     <>
+      <ToastContainer />
       <div className="d-flex w-100">
         <Sidebar />
         <div className="w-100">

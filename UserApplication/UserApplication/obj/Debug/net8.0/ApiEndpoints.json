@@ -143,6 +143,22 @@
   },
   {
     "ContainingType": "UserApplication.Controllers.UserDataController",
+    "Method": "DownloadInvoice",
+    "RelativePath": "UserData/download-invoice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "billNo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApplication.Controllers.UserDataController",
     "Method": "GetList",
     "RelativePath": "UserData/list",
     "HttpMethod": "GET",
@@ -152,6 +168,26 @@
       {
         "Name": "search",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDir",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sort",
+        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],
@@ -171,6 +207,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApplication.Controllers.AttendeeController",
+    "Method": "AggregationPractice",
+    "RelativePath": "Using_Aggregation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

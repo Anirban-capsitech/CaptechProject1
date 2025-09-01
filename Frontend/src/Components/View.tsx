@@ -119,10 +119,35 @@ const View = () => {
     setShowModal(true);
   };
 
+const DownloadPdf = async (bno: string) => {
+  try {
+    const res = await axiosInstance.get(
+      `UserData/download-invoice?billNo=${bno}`,
+      {
+        responseType: "blob",
+      }
+    );
+
+    const file = new Blob([res.data], { type: "application/pdf" });
+
+    const fileURL = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.href = fileURL;
+    link.download = `invoice-${bno}.pdf`; 
+    document.body.appendChild(link);
+    link.click();
+
+    link.remove();
+    URL.revokeObjectURL(fileURL);
+  } catch (error) {
+    console.error("Error downloading PDF:", error);
+  }
+};
+
+
   const deleteData = async () => {
     try {
       const res = await axiosInstance.post(`${deleteURL}/${deleteId}`);
-      console.log(res);
       setFetchList(true);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -226,6 +251,15 @@ const View = () => {
                         onClick={() => confirmDelete(item.id, item.billNo)}
                       >
                         <i className="bi bi-trash-fill text-danger"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="text-black-50 rounded-circle"
+                        style={{ all: "unset", cursor: "pointer" }}
+                        onClick={() => DownloadPdf(item.billNo)}
+                      >
+                        <i className="bi bi-download text-primary"></i>
                       </button>
                     </td>
                   </tr>
